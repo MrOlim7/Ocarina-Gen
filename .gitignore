@@ -1,0 +1,10 @@
+# Fichiers sensibles à ignorer
+.env
+
+# Logs et autres fichiers temporaires
+*.log
+/logs/
+
+# Dossiers spécifiques
+__pycache__/
+.vscode/
