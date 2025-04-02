@@ -23,6 +23,7 @@ def run_web():
 
 load_dotenv()  # Charger les variables d'environnement
 TOKEN = os.getenv("DISCORD_TOKEN")
+
 GUILD_ID = 1339280322805764098  # Remplace par l'ID de ton serveur
 GEN_ROLE_NAME = "Gen Free"  # Nom du rôle à attribuer
 STOCK_ROLE_NAME = "Owner"  # Nom du rôle pour voir le stock
@@ -254,7 +255,7 @@ async def stock(interaction: discord.Interaction):
         embed.set_footer(text=f"🕒 Dernière mise à jour il y a {elapsed_time}")
 
         # Envoi de la réponse dans le salon d'origine
-        await interaction.response.send_message(embed=embed, ephemeral=True)
+        await interaction.response.send_message(embed=embed, ephemeral=False)
 
     except Exception as e:
         # Gestion des erreurs générales
