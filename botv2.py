@@ -19,7 +19,7 @@ def home():
     return "Ocarina Gen Bot is running!"
 
 def run_web():
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 7070)))
 
 load_dotenv()  # Charger les variables d'environnement
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -411,7 +411,7 @@ async def avis(interaction: discord.Interaction, service: str, avis: str):
     else:
         await interaction.response.send_message("❌ Salon de destination introuvable.", ephemeral=True)
 
-port = int(os.environ.get("PORT", 8080))
+port = int(os.environ.get("PORT", 7070))
 threading.Thread(target=run_web).start()
 
 bot.run(TOKEN)
